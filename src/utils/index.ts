@@ -1,3 +1,6 @@
+export { translate } from './translate';
+export { fallbackTranslate } from './fallbackTranslate';
+export { getDirection } from './getDirection';
 export const detectLanguage = () => {
     if (typeof navigator !== "undefined") {
         return navigator.language.startsWith("ar") ? "ar" : "en";

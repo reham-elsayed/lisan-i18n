@@ -10,7 +10,7 @@
     ],
     "scripts": {
         "dev": "tsup --watch",
-        "build": "tsup src/index.ts --dts",
+        "build": "tsup",
         "test": "jest",
         "lint": "eslint . --ext .ts,.tsx",
         "prepublishOnly": "npm run build && npm test"

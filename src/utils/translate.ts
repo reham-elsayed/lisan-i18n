@@ -1,21 +1,6 @@
 
-const dictionaryData = {
-    en: {
-        greeting: {
-            morning: "Good morning",
-            evening: "Good evening"
-        },
-        farewell: "Goodbye"
-    },
-    ar: {
-        greeting: {
-            morning: "صباح الخير",
-            evening: "مساء الخير"
-        },
-        farewell: "مع السلامة"
-    }
-}
-type TranslationDictionary = {
+
+export type TranslationDictionary = {
     [key: string]: string | TranslationDictionary;
 };
 const langTypes = ["en", "ar"];
