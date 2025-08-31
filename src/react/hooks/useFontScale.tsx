@@ -2,7 +2,7 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { langFontSizeAdjust } from '../../utils/langFontMap'
 
-const useFontScale = () => {
+export const useFontScale = () => {
     const [scale, setScale] = React.useState(1)
     const { i18n } = useTranslation()
     React.useEffect(() => {
@@ -14,10 +14,9 @@ const useFontScale = () => {
         })
 
         return () => { i18n.off('languageChanged', handler) }
-    }, [])
+    }, [i18n.language])
 
     return { scale }
 
 }
 
-export default useFontScale

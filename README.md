@@ -85,8 +85,31 @@ Developer Guidelines for UI customization:
 useDirection hook returns variable for dynamic styles 
 
 '''
+const function App(){
 const {dir}= useDirection()
+  return (
+      <div className={`direction-${dir}`}>
+      <h1>{t('greeting')}</h1>
+    </div>
+  )
+}
 
+
+'''
+in your css file write styles
+example
+'''
+.direction-ltr {
+  background-color: #535bf2;
+  direction: ltr;
+  text-align: left;
+}
+
+.direction-rtl {
+  background-color: #f25b53;
+  direction: rtl;
+  text-align: right;
+}
 '''
 Use margin-inline / padding-inline over left/right.
 
@@ -99,6 +122,34 @@ Provide alternative icons for arrows/carets.
 
 1. Font & Typography Choices
 
+useFontScaler Component:
+Sets the fonts size depending on language
+creates a css variable that can be used to dynamically scale font sizes for different languages 
+example
+'''
+function main() {
+  return (
+    <I18nProvider>
+      <app/>
+      <FontScaler/>
+    </I18nProvider>
+  );
+}
+'''
+in your css you can set font size using created variable
+'''
+:root {
+  --font-scale: 1;
+}
+
+body {
+  font-size: calc(1rem * var(--font-scale));
+}
+
+h1 {
+  font-size: calc(1.5rem * var(--font-scale));
+}
+'''
 Use a font family that supports multiple scripts consistently (e.g. Noto Sans, Inter with fallback, Roboto, Source Sans).
 → This reduces jumps between languages.
 
@@ -125,18 +176,6 @@ Japanese/Chinese → same font size feels visually larger (compact glyphs).
 
 Arabic/Urdu → same font size feels smaller (tall glyphs).
 define a language → font-size multiplier map:
-
-const langFontSizeAdjust: Record<string, number> = {
-  ja: 0.9, // Japanese, shrink slightly
-  zh: 0.95, // Chinese
-  ar: 1.05, // Arabic, make a bit bigger
-};
-
-✅ Simple setup for both React & Next.js
-✅ Built-in RTL support for Arabic, Persian, Hebrew
-✅ Easy <LanguageSwitcher />
-✅ Configurable namespaces & fallback languages
-✅ Future roadmap: AI-assisted key extraction & translation suggestions
 
 🛠️ Roadmap
 
