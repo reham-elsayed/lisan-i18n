@@ -1,5 +1,5 @@
 
-import { AllLanguagesDictionary } from './types/types';
+import { AllLanguagesDictionary } from './types';
 
 export const dictionaries: AllLanguagesDictionary = {
     en: {
