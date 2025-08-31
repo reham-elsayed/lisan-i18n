@@ -97,6 +97,40 @@ Mark number/email inputs dir="ltr".
 Provide alternative icons for arrows/carets.
 🎨 Features
 
+1. Font & Typography Choices
+
+Use a font family that supports multiple scripts consistently (e.g. Noto Sans, Inter with fallback, Roboto, Source Sans).
+→ This reduces jumps between languages.
+
+Set consistent line-height (leading) across languages. This keeps vertical rhythm even when glyphs are taller (Arabic, Hindi, Thai).
+
+Avoid using pixel-perfect font sizes only → prefer rem or em so scaling is consistent.
+
+📏 2. Spacing & Layout
+
+Leave flexible space for text expansion:
+
+German, Russian → tend to be 30–50% longer than English.
+
+Arabic, Hebrew → can be shorter but taller.
+→ Use flexbox / grid instead of fixed widths.
+
+Avoid truncating text aggressively → allow wrapping.
+
+🌍 3. Language-specific adjustments
+
+ apply slight font-size scaling per language, e.g.
+
+Japanese/Chinese → same font size feels visually larger (compact glyphs).
+
+Arabic/Urdu → same font size feels smaller (tall glyphs).
+define a language → font-size multiplier map:
+
+const langFontSizeAdjust: Record<string, number> = {
+  ja: 0.9, // Japanese, shrink slightly
+  zh: 0.95, // Chinese
+  ar: 1.05, // Arabic, make a bit bigger
+};
 
 ✅ Simple setup for both React & Next.js
 ✅ Built-in RTL support for Arabic, Persian, Hebrew
