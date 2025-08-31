@@ -45,7 +45,7 @@ function Home() {
   const { t } = useTranslation();
   return <h1>{t("welcome")}</h1>;
 }
-
+ 
 Next.js
 // next.config.js
 const { withI18n } = require("lisan-i18n");
@@ -79,8 +79,24 @@ export default function Home() {
   "welcome": "مرحبًا بك في لسان",
   "changeLanguage": "تغيير اللغة"
 }
+///////////////////////////////////////////////////////////////////////////////////////////////
+Developer Guidelines for UI customization:
 
+useDirection hook returns variable for dynamic styles 
+
+'''
+const {dir}= useDirection()
+
+'''
+Use margin-inline / padding-inline over left/right.
+
+Prefer start/end in text-align.
+
+Mark number/email inputs dir="ltr".
+
+Provide alternative icons for arrows/carets.
 🎨 Features
+
 
 ✅ Simple setup for both React & Next.js
 ✅ Built-in RTL support for Arabic, Persian, Hebrew
