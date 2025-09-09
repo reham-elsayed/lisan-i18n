@@ -1,6 +1,18 @@
 export const langFontSizeAdjust = {
-    ar: 1.05,
-    ja: 0.9,
-    zh: 0.95,
-    default: 1
+    ar: {
+        scale: 1.05,
+        lineHeight: 1.6
+    },
+    ja: {
+        scale: 0.9,
+        lineHeight: 1.4
+    },
+    zh: {
+        scale: 0.95,
+        lineHeight: 1.45
+    },
+    default: {
+        scale: 1,
+        lineHeight: 1.5
+    }
 };

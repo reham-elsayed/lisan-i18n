@@ -111,6 +111,7 @@ example
   text-align: right;
 }
 '''
+
 Use margin-inline / padding-inline over left/right.
 
 Prefer start/end in text-align.
@@ -121,10 +122,11 @@ Provide alternative icons for arrows/carets.
 🎨 Features
 
 1. Font & Typography Choices
-
-useFontScaler Component:
-Sets the fonts size depending on language
-creates a css variable that can be used to dynamically scale font sizes for different languages 
+FontScaler Component:
+plug-and-play style injector for font scaling + line-height
+Sets the fonts size depending on language.
+pushes global CSS variables (--font-scale, --line-height) into :root.
+css variable can be used to dynamically scale font sizes for different languages 
 example
 '''
 function main() {
