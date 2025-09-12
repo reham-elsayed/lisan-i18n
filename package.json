@@ -9,8 +9,9 @@
         "dist"
     ],
     "scripts": {
+        "build:tokens": "node generateTokens.js",
         "dev": "tsup --watch",
-        "build": "tsup",
+        "build": "tsup && npm run build:tokens",
         "test": "jest",
         "lint": "eslint . --ext .ts,.tsx",
         "prepublishOnly": "npm run build && npm test"

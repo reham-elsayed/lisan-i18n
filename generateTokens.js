@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 // Load JSON file
-const tokens = require("./design-tokens.json");
+const tokens = require("./src/tokens/design-tokens.json");
 
 // Helper: flatten nested tokens into CSS variables
 function toCSSVars(obj, prefix = "") {
@@ -28,7 +28,7 @@ let css = `:root {\n${toCSSVars(tokens)}}
 `;
 
 // Write to a CSS file
-const outPath = path.join(__dirname, "tokens.css");
+const outPath = path.join(__dirname, "dist", "tokens.css");
 fs.writeFileSync(outPath, css);
 
 console.log("✅ Tokens generated at tokens.css");
