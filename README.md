@@ -81,6 +81,36 @@ export default function Home() {
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////
 Developer Guidelines for UI customization:
+🎨 Design Tokens
+
+In Lisān i18n Kit, we use design tokens to make styles flexible, consistent, and adaptable across different languages (especially Arabic ↔ English).
+
+✅ What are Design Tokens?
+
+Design tokens are named values (like variables) that store reusable style information.
+Instead of hardcoding colors, spacing, or typography, we define them once and use them everywhere.
+
+Tokens are applied globally (:root) and updated when the user changes language.
+
+Example flow:
+
+User switches to Arabic → --direction: rtl, --font-scale: 1.1
+
+The DOM <html> element updates lang="ar" and dir="rtl".
+
+All components automatically use the right tokens.
+
+🛠️ Benefits
+
+Consistency: same spacing/colors across React & Next.js apps.
+
+Accessibility: better readability when font sizes scale per language.
+
+Flexibility: easy theming for RTL vs LTR layouts.
+
+Future-proof: new tokens can be added without breaking old styles.
+///////////////////////////
+
 
 useDirection hook returns variable for dynamic styles 
 
@@ -121,36 +151,7 @@ Mark number/email inputs dir="ltr".
 Provide alternative icons for arrows/carets.
 🎨 Features
 
-1. Font & Typography Choices
-FontScaler Component:
-plug-and-play style injector for font scaling + line-height
-Sets the fonts size depending on language.
-pushes global CSS variables (--font-scale, --line-height) into :root.
-css variable can be used to dynamically scale font sizes for different languages 
-example
-'''
-function main() {
-  return (
-    <I18nProvider>
-      <app/>
-      <FontScaler/>
-    </I18nProvider>
-  );
-}
-'''
-in your css you can set font size using created variable
-'''
-:root {
-  --font-scale: 1;
-}
 
-body {
-  font-size: calc(1rem * var(--font-scale));
-}
-
-h1 {
-  font-size: calc(1.5rem * var(--font-scale));
-}
 '''
 Use a font family that supports multiple scripts consistently (e.g. Noto Sans, Inter with fallback, Roboto, Source Sans).
 → This reduces jumps between languages.
@@ -211,3 +212,46 @@ Licensed under the MIT License
 .
 
 ✨ Lisān: Making translations clear, simple, and Arabic-first.
+
+
+
+
+
+// {
+//     "en": {
+//         "font-size-body": "16px",
+//         "font-size-heading": "20px",
+//         "font-size-subheading": "18px",
+//         "line-height-body": "1.5",
+//         "line-height-heading": "1.3",
+//         "letter-spacing": "0",
+//         "word-spacing": "normal",
+//         "paragraph-spacing": "1rem",
+//         "spacing-button-x": "1rem",
+//         "spacing-button-y": "0.5rem",
+//         "spacing-card-x": "1.5rem",
+//         "spacing-card-y": "1rem",
+//         "card-min-width": "250px",
+//         "container-max-width": "1200px",
+//         "text-align": "left",
+//         "direction": "ltr"
+//     },
+//     "ar": {
+//         "font-size-body": "14px",
+//         "font-size-heading": "18px",
+//         "font-size-subheading": "16px",
+//         "line-height-body": "1.8",
+//         "line-height-heading": "1.5",
+//         "letter-spacing": "-0.5px",
+//         "word-spacing": "0.15em",
+//         "paragraph-spacing": "1.25rem",
+//         "spacing-button-x": "1.25rem",
+//         "spacing-button-y": "0.6rem",
+//         "spacing-card-x": "1.75rem",
+//         "spacing-card-y": "1.25rem",
+//         "card-min-width": "270px",
+//         "container-max-width": "1180px",
+//         "text-align": "right",
+//         "direction": "rtl"
+//     }
+// }

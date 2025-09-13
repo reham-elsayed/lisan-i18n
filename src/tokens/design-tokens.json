@@ -1,38 +1,94 @@
 {
     "en": {
-        "font-size-body": "16px",
-        "font-size-heading": "20px",
-        "font-size-subheading": "18px",
-        "line-height-body": "1.5",
-        "line-height-heading": "1.3",
-        "letter-spacing": "0",
-        "word-spacing": "normal",
-        "paragraph-spacing": "1rem",
-        "spacing-button-x": "1rem",
-        "spacing-button-y": "0.5rem",
-        "spacing-card-x": "1.5rem",
-        "spacing-card-y": "1rem",
-        "card-min-width": "250px",
-        "container-max-width": "1200px",
-        "text-align": "left",
-        "direction": "ltr"
+        "typography": {
+            "body": {
+                "font-size": {
+                    "min": "14px",
+                    "preferred": "1rem",
+                    "max": "18px"
+                },
+                "line-height": 1.5,
+                "letter-spacing": "0",
+                "word-spacing": "normal"
+            },
+            "heading": {
+                "font-size": {
+                    "min": "18px",
+                    "preferred": "1.25rem",
+                    "max": "24px"
+                },
+                "line-height": 1.3
+            },
+            "subheading": {
+                "font-size": {
+                    "min": "16px",
+                    "preferred": "1.125rem",
+                    "max": "20px"
+                },
+                "line-height": 1.4
+            }
+        },
+        "layout": {
+            "spacing": {
+                "button-x": "1rem",
+                "button-y": "0.5rem",
+                "card-x": "1.5rem",
+                "card-y": "1rem"
+            },
+            "sizes": {
+                "card-min-width": "250px",
+                "container-max-width": "1200px"
+            }
+        },
+        "direction": {
+            "text-align": "left",
+            "dir": "ltr"
+        }
     },
     "ar": {
-        "font-size-body": "14px",
-        "font-size-heading": "18px",
-        "font-size-subheading": "16px",
-        "line-height-body": "1.8",
-        "line-height-heading": "1.5",
-        "letter-spacing": "-0.5px",
-        "word-spacing": "0.15em",
-        "paragraph-spacing": "1.25rem",
-        "spacing-button-x": "1.25rem",
-        "spacing-button-y": "0.6rem",
-        "spacing-card-x": "1.75rem",
-        "spacing-card-y": "1.25rem",
-        "card-min-width": "270px",
-        "container-max-width": "1180px",
-        "text-align": "right",
-        "direction": "rtl"
+        "typography": {
+            "body": {
+                "font-size": {
+                    "min": "12px",
+                    "preferred": "0.9rem",
+                    "max": "16px"
+                },
+                "line-height": 1.8,
+                "letter-spacing": "-0.5px",
+                "word-spacing": "0.15em"
+            },
+            "heading": {
+                "font-size": {
+                    "min": "16px",
+                    "preferred": "1.125rem",
+                    "max": "22px"
+                },
+                "line-height": 1.5
+            },
+            "subheading": {
+                "font-size": {
+                    "min": "14px",
+                    "preferred": "1rem",
+                    "max": "18px"
+                },
+                "line-height": 1.6
+            }
+        },
+        "layout": {
+            "spacing": {
+                "button-x": "1.25rem",
+                "button-y": "0.6rem",
+                "card-x": "1.75rem",
+                "card-y": "1.25rem"
+            },
+            "sizes": {
+                "card-min-width": "270px",
+                "container-max-width": "1180px"
+            }
+        },
+        "direction": {
+            "text-align": "right",
+            "dir": "rtl"
+        }
     }
 }

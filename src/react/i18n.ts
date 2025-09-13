@@ -20,6 +20,7 @@ export function setupI18n({ dictionaries, defaultLang, controlDom = true }: { di
                 if (typeof window !== 'undefined') {
                     document.documentElement.lang = lang; // set the lang attribute on the html element
                     document.documentElement.dir = getDirection(lang); // set the dir attribute on the html element
+
                 }
             })
             i18nInstance.emit('languageChanged', i18nInstance.language); // trigger the event to set the initial lang and dir attributes

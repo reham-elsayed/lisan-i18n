@@ -10,9 +10,15 @@ function toCSSVars(obj, prefix = "") {
     for (const key in obj) {
         const value = obj[key];
         if (typeof value === "object") {
+
             css += toCSSVars(value, `${prefix}-${key}`);
-        } else {
-            css += `  --${prefix}-${key}: ${value};\n`;
+        } else if (typeof value === "object" && "min" in value) {
+            // special case: responsive font-size object
+            css += `-${prefix}-${key}: clamp(${value.min}, ${value.preferred}, ${value.max});\n`;
+        }
+        else {
+
+            css += `-${prefix}-${key}: ${value};\n`;
         }
     }
     return css;
